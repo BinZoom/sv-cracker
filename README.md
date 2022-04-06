@@ -4,6 +4,7 @@
 ![](https://media.giphy.com/media/Mh1UOn40nFImRGvQZ5/giphy.gif)
 ![](https://media.giphy.com/media/Mh1UOn40nFImRGvQZ5/giphy.gif)
 ![](https://media.giphy.com/media/Mh1UOn40nFImRGvQZ5/giphy.gif)
+
 ##主要步骤
 - 下载滑块背景图片并借助 cv2、np 等库计算距离
 - 根据缩放比例计算实际滑动所需移动距离
