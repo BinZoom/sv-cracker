@@ -1,9 +1,7 @@
 # 巨量纵横滑块验证码识别
 通过 selenium + chromeDriver + python 库实现通过单缺口滑块验证码，并登录账号
 
-![](https://media.giphy.com/media/Mh1UOn40nFImRGvQZ5/giphy.gif)
-![](https://media.giphy.com/media/Mh1UOn40nFImRGvQZ5/giphy.gif)
-![](https://media.giphy.com/media/Mh1UOn40nFImRGvQZ5/giphy.gif)
+<img src="https://p3.toutiaoimg.com/origin/tos-cn-i-qvj2lq49k0/5c7e57c89e3742359b604b3c67f75365?from=pc" width="300px">
 
 ## 主要步骤
 - 下载滑块背景图片并借助 cv2、np 等库计算距离
