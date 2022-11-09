@@ -1,5 +1,5 @@
-# 巨量纵横滑块验证码识别
-通过 selenium + chromeDriver + python 库实现通过单缺口滑块验证码，并登录账号
+# 头条巨量纵横滑块验证码识别
+Python + Selenium + chromedirver 破解头条巨量纵横登录滑块验证码，并登录账号
 
 <img src="https://p3.toutiaoimg.com/origin/tos-cn-i-qvj2lq49k0/5c7e57c89e3742359b604b3c67f75365?from=pc" width="300px">
 
