@@ -9,10 +9,10 @@ from utils.driver_util import is_visibility_by_xpath, MIN_WAIT_SECOND, LESS_WAIT
 
 
 # 头条登录账号
-username = 'test'
-password = 'test'
+username = '<username>'
+password = '<password>'
 # 截图根目录
-validate_pic_path = "G:\\verificaPic\\"
+validate_pic_path = "<validate_pic_path>"
 # 登录地址
 LOGIN_URL = 'https://business.oceanengine.com/site/login/'
 
