@@ -32,7 +32,7 @@ def init_chrome_driver(is_headless):
         chrome_options.add_argument('--headless')
 
     # 实例化驱动
-    driver = webdriver.Chrome(executable_path='D:\\Program Files\\chromeDriver\\chromedriver.exe',
+    driver = webdriver.Chrome(executable_path='<chromedriver.exe 路径>',
                               options=chrome_options)
     return driver
 
