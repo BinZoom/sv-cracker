@@ -6,9 +6,10 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from urllib.request import urlretrieve
+
+from utils.PositionalPID import get_pid_track
 
 LESS_WAIT_SECOND = 2
 MIN_WAIT_SECOND = 5
@@ -32,7 +33,7 @@ def init_chrome_driver(is_headless):
         chrome_options.add_argument('--headless')
 
     # 实例化驱动
-    driver = webdriver.Chrome(executable_path='<chromedriver.exe 路径>',
+    driver = webdriver.Chrome(executable_path=r'D:\Program Files\chromeDriver\chromedriver.exe',
                               options=chrome_options)
     return driver
 
@@ -86,30 +87,23 @@ def save_image(driver, xpathExpression, path, filename):
         return False
 
 
-def slide_verify(driver, xpathExpression, distance):
+def slide_verify(driver, expression, distance):
     '''
-    模拟人工拖动滑块
+    滑动验证码
     :param driver: 驱动
-    :param xpathExpression: 元素 xpath 路径
-    :param distance: 需要拖动的距离
-    :return:
+    :param expression:  滑块元素表达式
+    :param path:  滑动距离
     '''
-    element = driver.find_element(by=By.XPATH, value=xpathExpression)
-    actionchains = ActionChains(driver)
-    actionchains.click_and_hold(element).perform()
-    # 单位时间内，前面滑动距离长些(速度快)，后面则速度慢性，模拟人手操作（y轴设置偏移量，模拟人手操作）
-    y = int(random.random() * (4 - 2) + 1)
-    actionchains.move_by_offset(distance / 2, y)
-    y = int(random.random() * (4 - 2) + 1)
-    actionchains.move_by_offset(distance / 3, y)
-    y = int(random.random() * (4 - 2) + 1)
-    actionchains.move_by_offset(distance / 7, y)
-    # 计算余留的距离
-    remain = distance - (distance / 2 + distance / 3 + distance / 7)
-    y = int(random.random() * (4 - 2) + 1)
-    actionchains.move_by_offset(remain, y)
-    time.sleep(1)
-    # 释放
-    actionchains.release(element).perform()
-    time.sleep(3)
-    return not is_visibility_by_xpath(driver, LESS_WAIT_SECOND, xpathExpression)
+    slider_element = driver.find_element(by=By.CLASS_NAME, value=expression)
+
+    # 生成 PID 轨迹，可对 P、I、D 三个参数进行调参，如先控制 0.1，之后以试错法增加减少值大小以达到最佳效果
+    track = get_pid_track(0.1, 0.1, 0.1,distance)
+
+    webdriver.ActionChains(driver).click_and_hold(slider_element).perform()
+    for x in track:
+        if (x != 0):
+            # 模拟抖动
+            offset_y = random.uniform(-2, 2)
+            webdriver.ActionChains(driver).move_by_offset(xoffset=x, yoffset=offset_y).perform()
+    time.sleep(0.5)
+    webdriver.ActionChains(driver).release().perform()
