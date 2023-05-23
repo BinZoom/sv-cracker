@@ -18,8 +18,7 @@ PID（Proportional-Integral-Derivative）算法是一种常用的控制算法，
 这三个控制部分共同作用于系统，使得控制器输出的值能够及时、准确地跟随系统的变化，达到对系统的精确控制。
 
 ### 环境
-- chrome 浏览器
-- chromedriver
+- chrome + chromedriver
 - requirements.txt 相关依赖
 
 ### 免责声明
