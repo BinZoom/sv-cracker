@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/senlizishi/sv-cracker)">
+  <a href="https://github.com/senlizishi/sv-cracker">
     <img width="100" src="https://github.com/senlizishi/sv-cracker/blob/main/spider.png">
   </a>
 </p>
