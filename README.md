@@ -1,6 +1,15 @@
-# sv-cracker 滑块验证码破解
+<p align="center">
+  <a href="https://github.com/senlizishi/sv-cracker)">
+    <img width="100" src="https://github.com/senlizishi/sv-cracker/blob/main/spider.png">
+  </a>
+</p>
+<h1 align="center">sv-cracker</h1>
+<div align="center">
+滑块验证码破解
+</div>
 
-滑块验证码破解，使用 cv2 + numpy 分析滑块背景图片并计算所需滑动的距离，使用 PID 控制算法生成轨迹，使用 Selenium 模拟手工拖动滑块行为。 
+### 概述
+使用 cv2 + numpy 分析滑块背景图片并计算所需滑动的距离，使用 PID 控制算法生成轨迹，使用 Selenium 模拟手工拖动滑块行为。 
 
 <img src="https://p3.toutiaoimg.com/origin/tos-cn-i-qvj2lq49k0/5c7e57c89e3742359b604b3c67f75365?from=pc" width="300px">
 
